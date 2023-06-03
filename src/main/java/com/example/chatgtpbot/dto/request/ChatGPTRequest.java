@@ -20,6 +20,6 @@ public class ChatGPTRequest {
     public ChatGPTRequest(String model, String prompt) {
         this.model = model;
         this.messages = new ArrayList<>();
-        this.messages.add(new Message("use", prompt));
+        this.messages.add(new Message("user", prompt));
     }
 }
