@@ -28,4 +28,14 @@ public class ChatGPTController {
         return template.postForObject(apiURL, request, ChatGPTResponse.class);
 
     }
+
+    @GetMapping("/message")
+    public String getMessage(@RequestParam("prompt") String prompt){
+        ChatGPTRequest request = new ChatGPTRequest(model, prompt);
+
+        ChatGPTResponse chatGPTResponse = template.postForObject(apiURL, request, ChatGPTResponse.class);
+
+        return chatGPTResponse.getChoice().get(0).getMessage().getContent();
+
+    }
 }
