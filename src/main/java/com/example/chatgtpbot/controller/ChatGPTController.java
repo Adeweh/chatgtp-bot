@@ -14,7 +14,7 @@ public class ChatGPTController {
     @Value("${openai.model}")
     private String model;
 
-    @Value("${openai.api.key}")
+    @Value("${openai.api.url}")
     private String apiURL;
 
     @Autowired
